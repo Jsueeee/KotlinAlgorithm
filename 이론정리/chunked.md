@@ -1,5 +1,5 @@
 
-#### chunked
+### chunked
 #### 문자열(배열) 자르기
 
 ```Kotlin
@@ -28,3 +28,23 @@
 자른 문자열 [abcabcabca, bcdededede, dede]
 자른 문자열 [abcabcabcab, cdedededede, de]
 ```
+
+
+### joinToString
+```Kotlin
+public fun <T> Iterable<T>.joinToString(
+separator: CharSequence = ", ", 
+prefix: CharSequence = "", 
+postfix: CharSequence = "", 
+limit: Int = -1, 
+truncated: CharSequence = "...", 
+transform: ((T) -> CharSequence)? = null): String {
+    return joinTo(StringBuilder(), separator, prefix, postfix, limit, truncated, transform).toString()
+}
+```
+1. separator : 원소 연결 사이에 들어갈 문자열 ("" -> 공백없이 연결)
+2. prefix : 만들 문자열에서 시작할 문자열
+3. postfix : 만들 문자열에서 종료할 문자열
+4. limit : 개수제한
+
+
